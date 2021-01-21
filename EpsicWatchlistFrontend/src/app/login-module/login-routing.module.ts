@@ -1,12 +1,11 @@
-import { LoginFormComponent } from './component/login-form/login-form.component';
+import { AuthHomeComponent } from './component/auth-home/auth-home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginFormComponent
+    component: AuthHomeComponent
   }
 ];
 

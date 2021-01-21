@@ -7,4 +7,20 @@
 	<label for="password">Mot de passe</label>
 	<input type="password" class="form-control" id="password" [(ngModel)]="login.password">
 </div>
-<button class="btn btn-primary" (click)="onLogin()">Envoyer</button>
+<button class="btn btn-primary" (click)="onLogin()">Confirmer</button>
+<br><br>
+<span>Comstes par défaut :</span>
+<table class="table">
+	<tr>
+		<th>Nom d'utilisateur</th>
+		<th>Mot de passe</th>
+	</tr>
+	<tr>
+		<td>test (défaut)</td>
+		<td>1234</td>
+	</tr>
+	<tr>
+		<td>admin</td>
+		<td>admin</td>
+	</tr>
+</table>

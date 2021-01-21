@@ -1,0 +1,14 @@
+<div *ngIf="message" class="alert alert-{{success ? 'success' : 'danger'}}">{{ message }}</div>
+<div class="form-group">
+	<label for="username">Nom d'utilisateur</label>
+	<input type="text" class="form-control" id="username" [(ngModel)]="register.username">
+</div>
+<div class="form-group">
+	<label for="password">Mot de passe</label>
+	<input type="password" class="form-control" id="password" [(ngModel)]="register.password">
+</div>
+<div class="form-group">
+	<label for="passconf">Confirmer le mot de passe</label>
+	<input type="password" class="form-control" id="passconf" [(ngModel)]="register.passconf">
+</div>
+<button class="btn btn-primary" (click)="onRegister()">Confirmer</button>

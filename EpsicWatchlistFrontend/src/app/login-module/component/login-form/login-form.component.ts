@@ -11,7 +11,8 @@ import { User } from '../../model/user';
 })
 export class LoginFormComponent implements OnInit {
 
-	public login: Login = { username: "test", password: "1234" };
+	//public login = { username: "test", password: "1234" } as Login;
+	public login = { username: "admin", password: "admin" } as Login;
 	public message: string = "";
 
 	constructor(private _authService: AuthService, private router: Router) { }

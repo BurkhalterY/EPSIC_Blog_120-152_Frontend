@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Login } from '../model/login';
 import { User } from '../model/user';
+import { AppSettings } from '../../appSettings';
 
 @Injectable({
 	providedIn: 'root'
@@ -22,7 +23,7 @@ export class AuthService {
 			headers: new HttpHeaders().set('Content-Type', 'application/json')
 		}
 		
-		return this.http.post("https://localhost:44378/users/check_password", JSON.stringify(login), options);
+		return this.http.post(AppSettings.API_ENDPOINT+"/users/check_password", JSON.stringify(login), options);
 	}
 
 	logout(): void {
