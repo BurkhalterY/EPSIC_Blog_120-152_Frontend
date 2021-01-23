@@ -1,4 +1,4 @@
-import { AuthGuard } from '../guard/auth.guard';
+import { AuthGuard } from './guard/auth.guard';
 import { WatchlistComponent } from './component/watchlist/watchlist.component';
 import { HomeComponent } from './component/home/home.component';
 import { SearchComponent } from './component/search/search.component';

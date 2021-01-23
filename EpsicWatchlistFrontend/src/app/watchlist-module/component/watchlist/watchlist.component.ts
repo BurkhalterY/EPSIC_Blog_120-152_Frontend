@@ -8,7 +8,7 @@ import { AuthService } from './../../../login-module/service/auth.service';
 })
 export class WatchlistComponent implements OnInit {
 
-  constructor(private _authService: AuthService) { }
+  constructor(public _authService: AuthService) { }
 
   ngOnInit(): void {
   }
