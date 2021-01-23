@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'EpsicWatchlistFrontend'`, () => {
+  it(`should have as title 'EpsicBlogFrontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('EpsicWatchlistFrontend');
+    expect(app.title).toEqual('EpsicBlogFrontend');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('EpsicWatchlistFrontend app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('EpsicBlogFrontend app is running!');
   });
 });

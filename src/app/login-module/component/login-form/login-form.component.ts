@@ -26,7 +26,7 @@ export class LoginFormComponent implements OnInit {
 			data => {
 				this.message = "";
 				this._authService.user = data as User;
-				this.router.navigate(['watchlist']);
+				this.router.navigate(['blog']);
 			},
 			error => {
 				this.message = "Echec de l'authentification..."

@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModule } from './login-module/login.module';
-import { WatchlistModule } from './watchlist-module/watchlist.module';
+import { BlogModule } from './blog-module/blog.module';
 import { AdminModule } from './admin-module/admin.module';
 
 @NgModule({
@@ -15,7 +15,7 @@ import { AdminModule } from './admin-module/admin.module';
     BrowserModule,
     HttpClientModule,
     LoginModule,
-    WatchlistModule,
+    BlogModule,
     AdminModule,
     AppRoutingModule,
   ],
