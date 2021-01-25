@@ -22,7 +22,6 @@ export class UserListComponent implements OnInit {
 			data => {
 				if (data) {
 					this.users = data;
-					console.log(this.users);
 				}
 			},
 			error => { }

@@ -15,7 +15,7 @@ export class UserService {
 		return this.http.get<[User]>(AppSettings.API_ENDPOINT+'/users');
 	}
 
-	addUser(user: User) {
+	addUser(user: User): Observable {
 		let options = {
 			headers: new HttpHeaders().set('Content-Type', 'application/json'),
 		}
@@ -23,11 +23,25 @@ export class UserService {
 		return this.http.post(AppSettings.API_ENDPOINT+'/users', JSON.stringify(user), options);
 	}
 
-	deleteUser(user: User) {
+	updateUser(user: User): Observable {
+		let options = {
+			headers: new HttpHeaders().set('Content-Type', 'application/json'),
+		}
+
+		return this.http.post(AppSettings.API_ENDPOINT+'/users/'+user.id, JSON.stringify(user), options);
+	}
+
+	deleteUser(user: User): Observable {
 		let options = {
 			headers: new HttpHeaders().set('Content-Type', 'application/json'),
 		}
 
 		return this.http.delete(AppSettings.API_ENDPOINT+'/users/'+user.id, options);
+	}
+
+	updateAvatar(id: number, avatar: File): Observable {
+		let formData = new FormData();
+		formData.append('file', avatar, avatar.name);
+		return this.http.post(AppSettings.API_ENDPOINT+'/users/'+id+'/avatar', formData);
 	}
 }

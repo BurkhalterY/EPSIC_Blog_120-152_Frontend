@@ -1,0 +1,7 @@
+.character {
+	width: 30%;
+	border: 2px solid #257788;
+	float: left;
+	margin: 2px;
+	padding: 2px;
+}

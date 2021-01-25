@@ -1,9 +1,13 @@
-import { Movie } from './movie';
+import { Post } from './post';
+import { Comment } from './comment';
 
 export interface User
 {
     id: number;
     username: string;
+    password: string;
+    passconf: string;
     isAdmin: boolean;
-    movies: Array<Movie>;
+    posts: Array<Post>;
+    comments: Array<Comment>;
 }

@@ -1,5 +1,16 @@
-<div>
-	<strong>{{user.username}}</strong><br>
-	<span *ngIf="user.isAdmin">Administrateur</span><br>
-	<span>Films : {{user.movies.length}}</span><br>
+<div class="character">
+	<div *ngIf="message" class="alert alert-{{ success ? 'success' : 'danger' }}">{{ message }}</div>
+	<img src="{{ imageURL }}" alt="Avatar de {{ user.username }}" class="w-25" /><br>
+	<strong>{{ user.username }} {{ user.isAdmin ? '(admin)' : '' }}</strong><br>
+	<input type="file" (change)="fileChange($event)" accept="image/png"><br>
+	<hr>	
+	<div class="form">
+		<i>Changement de mot de passe</i>
+		<input type="password" name="password" placeholder="Mot de passe" class="form-control"  [(ngModel)]="user.password">
+		<input type="password" name="passconf" placeholder="Confirmer le mot de passe" class="form-control"  [(ngModel)]="user.passconf">
+		<button class="btn btn-outline-primary mt-1 w-100" (click)="onChangePassword()">Changer le mot de passe</button>
+	</div>
+	<hr>
+	<button *ngIf="!user.isAdmin" class="btn btn-outline-primary w-100" (click)="onSetAdmin()">Rendre administrateur</button>
+	<button *ngIf="user.isAdmin" class="btn btn-outline-danger w-100" (click)="onRemoveAdmin()">Enlever administrateur</button>
 </div>
