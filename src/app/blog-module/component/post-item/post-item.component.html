@@ -1,0 +1,28 @@
+<hr class="border-secondary">
+<div class="border border-secondary rounded p-1">
+	<div *ngIf="!edit && post != null">
+		<button *ngIf="canEdit" class="btn btn-outline-danger float-right" (click)="sendPostDelete()">X</button>
+		<button *ngIf="canEdit" class="btn btn-outline-primary float-right mr-1" (click)="postEdit()">Edition</button>
+		<h2>{{ post.title }}</h2>
+		<span>Par <strong>{{ post.author.username }}</strong>, le <strong>{{ post.prettyDate }}</strong></span>
+		<p>{{ post.content }}</p>
+		<button class="btn btn-sm btn-success" (click)="toggleComments()">Voir/cacher les commentaires</button>
+		<div *ngIf="showComments">
+			<strong>Commentaires :</strong><br>
+			<app-comment-item *ngIf="logged" [postId]="post.id" (commentAdd)="onAddComment($event)"></app-comment-item>
+			<app-comment-item *ngFor="let comment of post.comments" [comment]="comment"
+							(commentAdd)="onAddComment($event)"
+							(commentUpdate)="onUpdateComment($event)"
+							(commentDelete)="onDeleteComment($event)"></app-comment-item>
+			<i *ngIf="post.comments.length == 0">Aucun commentaire... pour le moment</i>
+		</div>
+	</div>
+	<div *ngIf="edit">
+		<h2>Poster un article</h2>
+		<label for="title">Titre :</label>
+		<input type="text" name="title" id="title" class="form-control" [(ngModel)]="post.title">
+		<label for="content">Contenu :</label>
+		<textarea name="content" id="content" class="form-control" [(ngModel)]="post.content"></textarea>
+		<button class="btn btn-primary" (click)="sendPostAddOrUpdate()">Sauvegarder</button>
+	</div>
+</div>

@@ -5,8 +5,10 @@ export interface Post
 {
     id: number;
     title: string;
-    date: Date;
+    date: string;
+    prettyDate: string;
     content: string;
+    authorId: number;
     author: User;
     comments: Array<Comment>;
 }

@@ -11,8 +11,8 @@ import { AppSettings } from '../../appSettings';
 export class AuthService {
 
 	public user = {
+		id: 0, // 0 = not logged
 		username: "",
-		userId: 0, // 0 = not logged
 		isAdmin: false
 	} as User;
 
@@ -28,8 +28,8 @@ export class AuthService {
 
 	logout(): void {
 		this.user = {
+			id: 0,
 			username: "",
-			userId: 0,
 			isAdmin: false
 		} as User;
 		this.router.navigate(['login']);

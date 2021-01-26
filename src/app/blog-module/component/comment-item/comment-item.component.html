@@ -1,0 +1,15 @@
+<hr class="border-secondary">
+<div class="border border-secondary rounded p-1">
+	<div *ngIf="!edit && comment != null">
+		<button *ngIf="canEdit" class="btn btn-outline-danger float-right" (click)="sendCommentDelete()">X</button>
+		<button *ngIf="canEdit" class="btn btn-outline-primary float-right mr-1" (click)="commentEdit()">Edition</button>
+		<span><strong>{{ comment.author.username }}</strong> ({{ comment.prettyDate }})</span>
+		<p>{{ comment.message }}</p>
+	</div>
+	<div *ngIf="edit">
+		<h3>Poster un commentaire</h3>
+		<label for="message">Message :</label>
+		<textarea name="message" id="message" class="form-control" [(ngModel)]="comment.message"></textarea>
+		<button class="btn btn-primary" (click)="sendCommentAddOrUpdate()">Sauvegarder</button>
+	</div>
+</div>
