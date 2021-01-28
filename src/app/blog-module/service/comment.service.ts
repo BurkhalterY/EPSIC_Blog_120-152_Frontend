@@ -13,8 +13,6 @@ export class CommentService {
 	constructor(private http: HttpClient) { }
 
 	getComments(post: Post): Observable<Array<Comment>> {
-		console.log(post);
-		console.log(AppSettings.API_ENDPOINT+'/posts/'+post.id+'/comments');
 		return this.http.get<[Comment]>(AppSettings.API_ENDPOINT+'/posts/'+post.id+'/comments');
 	}
 
