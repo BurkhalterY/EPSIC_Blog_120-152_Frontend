@@ -10,7 +10,7 @@ import { AuthService } from '../../../login-module/service/auth.service';
 })
 export class PostListComponent implements OnInit {
 
-	public posts: Array<Post>;
+	public posts: Array<Post> = [];
 	public logged: boolean;
 
 	constructor(private _postService: PostService, private _authService: AuthService) { }

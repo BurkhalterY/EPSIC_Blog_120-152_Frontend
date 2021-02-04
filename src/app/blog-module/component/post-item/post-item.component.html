@@ -10,7 +10,7 @@
 		<div *ngIf="showComments">
 			<strong>Commentaires :</strong><br>
 			<app-comment-item *ngIf="logged" [postId]="post.id" (commentAdd)="onAddComment($event)"></app-comment-item>
-			<app-comment-item *ngFor="let comment of post.comments" [comment]="comment"
+			<app-comment-item *ngFor="let comment of post.comments.reverse()" [comment]="comment"
 							(commentAdd)="onAddComment($event)"
 							(commentUpdate)="onUpdateComment($event)"
 							(commentDelete)="onDeleteComment($event)"></app-comment-item>
