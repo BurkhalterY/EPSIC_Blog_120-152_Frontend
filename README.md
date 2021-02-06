@@ -8,6 +8,8 @@ Dans le répertoire du backend, exécutez la commande :
 
 `dotnet run`
 
+Pensez à autoriser la connexion la première fois, car il n'y a pas de certificat SSL et donc les requêtes n'aboutirons pas.
+
 Dans le répertoire du frontend, exécutez les commandes :
 
 `npm i` (la première fois)
