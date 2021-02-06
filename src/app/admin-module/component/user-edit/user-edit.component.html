@@ -1,7 +1,7 @@
 <div class="character">
 	<div *ngIf="message" class="alert alert-{{ success ? 'success' : 'danger' }}">{{ message }}</div>
 	<img src="{{ imageURL }}" alt="Avatar de {{ user.username }}" class="w-25" /><br>
-	<strong>{{ user.username }} {{ user.isAdmin ? '(admin)' : '' }}</strong><br>
+	<strong>{{ user.username }}{{ user.isAdmin ? ' (admin)' : '' }}</strong><br>
 	<input type="file" (change)="fileChange($event)" accept="image/png"><br>
 	<hr>	
 	<div class="form">
